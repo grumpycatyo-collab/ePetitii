@@ -1,10 +1,13 @@
 package func;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+
+@Qualifier("DataSource")
 @RequestMapping("/api/petitii")
 public class PetitionController {
     private final PetitionService petitionService;

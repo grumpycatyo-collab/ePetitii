@@ -14,6 +14,7 @@ public class Petitie {
     private List<User> semnat;
     private String feedback;
     private Date deadLine;
+    private int nrSignNeaded;
     private List<String> Category;
     public int getId() {
         return id;

@@ -8,29 +8,26 @@ import java.util.List;
 public class Petitie {
     @Id
     private int id;
-    @ManyToOne
-    private User initiatior;
-    @Column(name = "Name")
-    private String name;
-    @Column(name = "Date")
-    private Date date;
-    @Column(name = "nrSign")
-    private int nrSign;
-    @Column(name = "Content")
-    private String content;
-    @Column(name = "toWho")
-    private String toWho;
-    @Column(name = "Status")
-    private Status statut;
-    @OneToMany
 
-    private List<User> semnat;
-    @Column(name = "Feedback")
+    private String initiator;
+
+    private String name;
+
+    private Date date;
+
+    private int nrsign;
+
+    private String content;
+
+    private String towho;
+
+    private String statut;
+
+    private String semnat;
+
     private String feedback;
-    @Column(name = "deadLine")
-    private Date deadLine;
-    @Column(name = "nrSignNeeded")
-    private int nrSignNeeded;
+    private Date deadline;
+    private int nrsignneeded;
 
     private String Category;
     public int getId() {
@@ -39,12 +36,11 @@ public class Petitie {
     public void setId(int id) {
         this.id = id;
     }
-    public User getInitiatior() {
-        return initiatior;
+    public String getInitiator() {
+        return initiator;
     }
-    public void setInitiatior(String name) {
-        this.initiatior = new User();
-        initiatior.setName(name);
+    public void setInitiator(String name) {
+        this.initiator = name;
     }
     public String getName() {
         return name;
@@ -59,10 +55,10 @@ public class Petitie {
         this.date = date;
     }
     public int getNrSign() {
-        return nrSign;
+        return nrsign;
     }
     public void setNrSign(int nrSign) {
-        this.nrSign = nrSign;
+        this.nrsign = nrSign;
     }
     public String getContent() {
         return content;
@@ -71,21 +67,21 @@ public class Petitie {
         this.content = content;
     }
     public String getToWho() {
-        return toWho;
+        return towho;
     }
     public void setToWho(String toWho) {
-        this.toWho = toWho;
+        this.towho = toWho;
     }
-    public Status getStatut() {
+    public String getStatut() {
         return statut;
     }
-    public void setStatut(Status statut) {
+    public void setStatut(String statut) {
         this.statut = statut;
     }
-    public List<User> getSemnat() {
+    public String getSemnat() {
         return semnat;
     }
-    public void setSemnat(List<User> semnat) {
+    public void setSemnat(String semnat) {
         this.semnat = semnat;
     }
     public String getFeedback() {
@@ -95,10 +91,10 @@ public class Petitie {
         this.feedback = feedback;
     }
     public Date getDeadLine() {
-        return deadLine;
+        return deadline;
     }
     public void setDeadLine(Date deadLine) {
-        this.deadLine = deadLine;
+        this.deadline = deadLine;
     }
     public String getCategory() {
         return Category;

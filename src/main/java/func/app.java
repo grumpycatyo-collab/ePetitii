@@ -15,10 +15,7 @@ public class app {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(app.class, args);
         PetitionService petitionService = context.getBean(PetitionService.class);
-        List<Petitie> petitions = petitionService.getAllPetitions();
-        for (Petitie petition : petitions){
-            System.out.println(petition.toString());
-        }
+        System.out.println(petitionService.getAllPetitions());
 
         // Close the application context
         context.close();

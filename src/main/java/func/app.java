@@ -18,7 +18,7 @@ public class app {
         System.out.println(petitionService.getAllPetitions());
 
         // Close the application context
-//        context.close();
+
 
     }
 }

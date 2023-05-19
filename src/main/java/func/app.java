@@ -7,17 +7,17 @@ import org.springframework.context.ConfigurableApplicationContext;
 import java.util.List;
 @SpringBootApplication
 public class app {
-    private final UserService userService;
+    private final PetitionService petitionService;
 
-    public app(UserService userService) {
-        this.userService = userService;
+    public app(PetitionService petitionService){
+        this.petitionService = petitionService;
     }
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(app.class, args);
-        UserService userService = context.getBean(UserService.class);
-        List<User> users = userService.getAllUsers();
-        for (User user : users){
-
+        PetitionService petitionService = context.getBean(PetitionService.class);
+        List<Petitie> petitions = petitionService.getAllPetitions();
+        for (Petitie petition : petitions){
+            System.out.println(petition.toString());
         }
 
         // Close the application context

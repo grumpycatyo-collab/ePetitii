@@ -1,21 +1,38 @@
 package func;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 import java.util.List;
+@Entity
 public class Petitie {
+    @Id
     private int id;
+    @ManyToOne
     private User initiatior;
+    @Column(name = "Name")
     private String name;
+    @Column(name = "Date")
     private Date date;
+    @Column(name = "nrSign")
     private int nrSign;
+    @Column(name = "Content")
     private String content;
+    @Column(name = "toWho")
     private String toWho;
+    @Column(name = "Status")
     private Status statut;
+    @OneToMany
+
     private List<User> semnat;
+    @Column(name = "Feedback")
     private String feedback;
+    @Column(name = "deadLine")
     private Date deadLine;
-    private int nrSignNeaded;
-    private List<String> Category;
+    @Column(name = "nrSignNeeded")
+    private int nrSignNeeded;
+
+    private String Category;
     public int getId() {
         return id;
     }
@@ -25,8 +42,9 @@ public class Petitie {
     public User getInitiatior() {
         return initiatior;
     }
-    public void setInitiatior(User initiatior) {
-        this.initiatior = initiatior;
+    public void setInitiatior(String name) {
+        this.initiatior = new User();
+        initiatior.setName(name);
     }
     public String getName() {
         return name;
@@ -82,20 +100,12 @@ public class Petitie {
     public void setDeadLine(Date deadLine) {
         this.deadLine = deadLine;
     }
-    public List<String> getCategory() {
+    public String getCategory() {
         return Category;
     }
-    public void setCategory(List<String> category) {
-        Category = category;
+    public void setCategory(String category) {
+        this.Category = category;
     }
 
-    public Petitie(int id, User initiatior, String name, Date date, String content, String toWho) {
-        this.id = id;
-        this.initiatior = initiatior;
-        this.name = name;
-        this.date = date;
-        this.nrSign = 1;
-        this.content = content;
-        this.toWho = toWho;
-    }
+
 }

@@ -9,5 +9,4 @@ import java.util.List;
 
 @Repository
 public interface PetitionRepository extends JpaRepository<Petitie, Integer> {
-
 }

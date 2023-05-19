@@ -16,4 +16,7 @@ public class PetitionService {
     public List<Petitie> getAllPetitions() {
         return petitionRepository.findAll();
     }
+    public void insertData(Petitie entity) {
+        petitionRepository.save(entity);
+    }
 }

@@ -104,4 +104,11 @@ public class Petitie {
     }
 
 
+    public int getNrsignneeded() {
+        return nrsignneeded;
+    }
+
+    public void setNrsignneeded(int nrsignneeded) {
+        this.nrsignneeded = nrsignneeded;
+    }
 }

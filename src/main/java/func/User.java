@@ -1,17 +1,21 @@
 package func;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 import java.util.Date;
 
-
+@Entity
 public class User {
    private String name;
    private String surname;
+   @Id
    private String id;
    private Location baseOfResidence;
    private boolean isResident;
    private Date birthday;
    private String role;
-
 
     public String getName() {
         return name;
@@ -50,12 +54,5 @@ public class User {
         this.birthday = birthday;
     }
 
-    public User(String name, String surname, String id, Location baseOfResidence, boolean isResident, Date birthday) {
-        this.name = name;
-        this.surname = surname;
-        this.id = id;
-        this.baseOfResidence = baseOfResidence;
-        this.isResident = isResident;
-        this.birthday = birthday;
-    }
+
 }

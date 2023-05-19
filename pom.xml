@@ -71,7 +71,7 @@
                     </from>
                     <container>
                         <ports>
-                            <port>8080</port>
+                            <port>3306</port>
                         </ports>
                         <format>OCI</format>
                     </container>

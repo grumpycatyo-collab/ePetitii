@@ -1,25 +1,23 @@
 package func;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.List;
-
-public class main {
+@SpringBootApplication
+public class app {
     private final UserService userService;
 
-    public main(UserService userService) {
+    public app(UserService userService) {
         this.userService = userService;
     }
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(main.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(app.class, args);
         UserService userService = context.getBean(UserService.class);
         List<User> users = userService.getAllUsers();
-        for (User user : users) {
-            // Do something with the user data
-            System.out.println("User ID: " + user.getId());
-            System.out.println("User Name: " + user.getName());
-            // ... Process other user properties
+        for (User user : users){
+
         }
 
         // Close the application context

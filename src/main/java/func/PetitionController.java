@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 @RestController
 
@@ -23,7 +24,7 @@ public class PetitionController {
         return petitionService.getAllPetitions();
     }
     @PostMapping("/add")
-    public String createPetition(@RequestBody Petitie request) {
+    public int createPetition(@RequestBody Petitie request) {
         List<Petitie> list = getPetitions();
         Petitie petition = new Petitie();
         int id = list.get(list.size() - 1).getId() + 1;
@@ -59,11 +60,13 @@ public class PetitionController {
             petition.setNrsignneeded(10000);
         }
         else{
-            petition.setNrsignneeded(10000);
+            Random random = new Random();
+            int randomNumber = random.nextInt(9001) + 1000;
+            petition.setNrsignneeded(randomNumber);
         }
         list.add(petition);
         petitionService.insertData(petition);
-        return "Petition created successfully";
+        return id;
     }
     @PostMapping("/sign")
     private String signPetition(@RequestBody Petitie request) {

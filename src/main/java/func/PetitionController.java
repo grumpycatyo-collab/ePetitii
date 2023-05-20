@@ -63,22 +63,14 @@ public class PetitionController {
         }
         list.add(petition);
         petitionService.insertData(petition);
-
-
-
-
-
-        // Get other fields from the request and set them accordingly
-
-        // Create a new Petition object
-
-        // Set other fields of the Petition object
-
-        // Process and save the petition object in the database or perform other operations
-
         return "Petition created successfully";
     }
-
-
-
+    @PostMapping("/sign")
+    private String signPetition(@RequestBody Petitie request) {
+        List<Petitie> list = getPetitions();
+        int id = request.getId();
+        String semnatPers = request.getSemnat();
+        petitionService.updateData(id, semnatPers);
+        return "Petition signed successfully";
+    }
 }

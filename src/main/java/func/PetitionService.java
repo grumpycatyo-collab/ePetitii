@@ -24,4 +24,16 @@ public class PetitionService {
     public void insertData(Petitie entity) {
         petitionRepository.save(entity);
     }
+    public void updateData(int entityId, String semnat ) {
+        // Retrieve the entity to update
+        Petitie entity = petitionRepository.findById(entityId).orElse(null);
+
+        if (entity != null) {
+            // Update the desired property
+            entity.setSemnat(entity.getSemnat() + "," + semnat);
+            entity.setNrSign(entity.getNrSign() + 1);
+            // Save the updated entity
+            petitionRepository.save(entity);
+        }
+    }
 }

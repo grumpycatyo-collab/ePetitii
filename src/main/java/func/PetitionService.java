@@ -36,4 +36,9 @@ public class PetitionService {
             petitionRepository.save(entity);
         }
     }
+
+    public List<Petitie> searchByName(String name) {
+        return petitionRepository.findByNameContaining(name);
+    }
+
 }

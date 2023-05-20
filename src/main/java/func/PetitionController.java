@@ -73,4 +73,9 @@ public class PetitionController {
         petitionService.updateData(id, semnatPers);
         return "Petition signed successfully";
     }
+
+    @GetMapping("/search/{name}")
+    public List<Petitie> searchByName(@PathVariable String name) {
+        return petitionService.searchByName(name);
+    }
 }

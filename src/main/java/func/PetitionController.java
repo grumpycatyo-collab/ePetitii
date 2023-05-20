@@ -15,7 +15,7 @@ public class PetitionController {
 
     public PetitionController(PetitionService petitionService) {this.petitionService = petitionService;}
     @GetMapping("/id/{id}")
-    public Petitie getPetitions(@PathVariable("id") int id){
+    public Petitie getPetition(@PathVariable("id") int id){
         return petitionService.getPetitionById(id).orElse(null);
     }
     @GetMapping

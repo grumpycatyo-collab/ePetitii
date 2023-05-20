@@ -15,6 +15,7 @@ public class CategoryController {
     @GetMapping
     public ArrayList<Category> getAllCategories() {
         ArrayList<Category> cat = new ArrayList<>();
+        cat.add(new Category("all", "Toate categoriile"));
         cat.add(new Category("educatie", "Educatie"));
         cat.add(new Category("mediu", "Mediu"));
         cat.add(new Category("infrastructura", "Infrastructura"));

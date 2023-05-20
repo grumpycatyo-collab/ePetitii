@@ -1,3 +1,3 @@
-# octopus-thing-2
-
-Huinea de hackaton
+# ePetitii Mteam
+Nu huynea de hakaton :)
+😹

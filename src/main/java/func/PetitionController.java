@@ -14,7 +14,10 @@ public class PetitionController {
     private final PetitionService petitionService;
 
     public PetitionController(PetitionService petitionService) {this.petitionService = petitionService;}
-
+    @GetMapping("/id/{id}")
+    public Petitie getPetitions(@PathVariable("id") int id){
+        return petitionService.getPetitionById(id).orElse(null);
+    }
     @GetMapping
     public List<Petitie> getPetitions() {
         return petitionService.getAllPetitions();
@@ -75,4 +78,7 @@ public class PetitionController {
 
         return "Petition created successfully";
     }
+
+
+
 }

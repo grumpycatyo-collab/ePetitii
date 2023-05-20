@@ -3,6 +3,7 @@ package func;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PetitionService {
@@ -15,6 +16,10 @@ public class PetitionService {
 
     public List<Petitie> getAllPetitions() {
         return petitionRepository.findAll();
+    }
+
+    public Optional<Petitie> getPetitionById(int id) {
+        return petitionRepository.findById(id);
     }
     public void insertData(Petitie entity) {
         petitionRepository.save(entity);

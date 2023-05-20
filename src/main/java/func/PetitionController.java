@@ -55,7 +55,8 @@ public class PetitionController {
 
         String category = request.getCategory();
         petition.setCategory(category);
-
+        String locatie = request.getLocatie();
+        petition.setLocatie(locatie);
         if(towho.equals("Guver") || towho.equals("Parlament") || towho.equals("Presidinte")){
             petition.setNrsignneeded(10000);
         }

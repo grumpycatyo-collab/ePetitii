@@ -3,7 +3,6 @@ package func;
 import jakarta.persistence.*;
 
 import java.util.Date;
-import java.util.List;
 @Entity
 public class Petitie {
     @Id
@@ -28,8 +27,17 @@ public class Petitie {
     private String feedback;
     private Date deadline;
     private int nrsignneeded;
-
+    private String locatie;
     private String Category;
+
+    public String getLocatie() {
+        return locatie;
+    }
+
+    public void setLocatie(String locatie) {
+        locatie = locatie;
+    }
+
     public int getId() {
         return id;
     }
